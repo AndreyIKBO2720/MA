@@ -13,6 +13,16 @@ session_local = scoped_session(sessionmaker(autocommit=False, autoflush=False, b
 
 Base = declarative_base()
 
+# Настройки Keycloak
+KEYCLOAK_URL = "http://keycloak:8080/"
+KEYCLOAK_CLIENT_ID = "testClient"
+KEYCLOAK_REALM = "testRealm"
+KEYCLOAK_CLIENT_SECRET = "**********"
+
+keycloak_openid = KeycloakOpenID(server_url=KEYCLOAK_URL,
+                                  client_id=KEYCLOAK_CLIENT_ID,
+                                  realm_name=KEYCLOAK_REALM,
+                                  client_secret_key=KEYCLOAK_CLIENT_SECRET)
 
 class Purchase(Base):
     __tablename__ = 'purchase_bashkirov'
@@ -53,6 +63,7 @@ def update_graph(n_clicks):
         hovermode='closest'
     )
     return figure
+
 
 
 if __name__ == '__main__':
