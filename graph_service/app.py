@@ -6,6 +6,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, Float, String, Date
+from keycloak import KeycloakOpenID
 
 URL = 'postgresql://secUREusER:StrongEnoughPassword)@51.250.26.59:5432/query'
 engine = create_engine(URL)
