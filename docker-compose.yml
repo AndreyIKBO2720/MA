@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  graph_service:
+    build: ./graph_service
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./graph_service:/code
+
+  admin_service:
+    restart: on-failure
+    container_name: admin_service
+    build: admin_service/
+    ports:
+      - "8001:80"
