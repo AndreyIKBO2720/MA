@@ -8,6 +8,7 @@ from database import database as database
 from database.database import Purchase
 from model.purchase import PurchaseModel
 
+
 app = FastAPI()
 database.Base.metadata.create_all(bind=database.engine)
 
