@@ -8,6 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, Float, String, Date
 
 
+
 URL = 'postgresql://secUREusER:StrongEnoughPassword)@51.250.26.59:5432/query'
 engine = create_engine(URL)
 session_local = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
