@@ -24,6 +24,7 @@ def get_db():
 db_dependency = Annotated[Session, Depends(get_db)]
 
 
+
 @app.get("/health", status_code=status.HTTP_200_OK)
 async def service_alive():
     return {'message': 'service alive'}
