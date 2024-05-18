@@ -14,6 +14,7 @@ session_local = scoped_session(sessionmaker(autocommit=False, autoflush=False, b
 
 Base = declarative_base()
 
+
 # Настройки Keycloak
 KEYCLOAK_URL = "http://keycloak:8080/"
 KEYCLOAK_CLIENT_ID = "testClient"
